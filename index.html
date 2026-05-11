@@ -1,78 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sports Pandit</title>
 
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;
-n.loaded=!0;
-n.version='2.0';
-n.queue=[];
-t=b.createElement(e);
-t.async=!0;
-t.src=v;
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}
-(window, document,'script',
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '2082221552346594');
+fbq('init', '2150111219144057');
 fbq('track', 'PageView');
 </script>
 
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2150111219144057&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
 body{
-margin:0;
-font-family:Arial;
-background:#000;
-color:white;
-text-align:center;
+    background:#050505;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    color:white;
 }
 
 .container{
-padding:30px;
+    width:100%;
+    max-width:420px;
+    background:#0d0d0d;
+    border:2px solid #00ffd0;
+    border-radius:25px;
+    padding:25px 20px;
+    box-shadow:0 0 25px rgba(0,255,208,0.2);
 }
 
-h1{
-font-size:40px;
-color:#00ffd5;
+.logo{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:10px;
 }
 
-p{
-font-size:18px;
-line-height:1.6;
+.title{
+    text-align:center;
+    color:#00ffd0;
+    font-size:36px;
+    font-weight:bold;
 }
 
-.btn{
-display:block;
-width:80%;
-margin:20px auto;
-padding:18px;
-border-radius:12px;
-text-decoration:none;
-font-size:22px;
-font-weight:bold;
+.subtitle{
+    text-align:center;
+    font-size:21px;
+    margin-top:18px;
+    line-height:1.5;
 }
 
-.telegram{
-background:#229ED9;
-color:white;
+.badge{
+    margin:22px auto;
+    width:fit-content;
+    background:#00ffd0;
+    color:black;
+    padding:12px 24px;
+    border-radius:40px;
+    font-weight:bold;
+    font-size:18px;
 }
 
-.box{
-background:#111;
-padding:30px;
-border-radius:20px;
-max-width:500px;
-margin:auto;
-margin-top:50px;
+.description{
+    text-align:center;
+    color:#d6d6d6;
+    line-height:1.8;
+    margin-top:20px;
+    font-size:18px;
 }
+
+.members{
+    text-align:center;
+    margin-top:25px;
+    color:#00ffd0;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.preview{
+    margin-top:25px;
+}
+
+.preview img{
+    width:100%;
+    border-radius:18px;
+}
+
+.features{
+    background:#171717;
+    padding:22px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.features p{
+    margin:14px 0;
+    font-size:18px;
+}
+
+.telegram-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    text-decoration:none;
+    background:#1d9bf0;
+    color:white;
+    padding:22px;
+    border-radius:18px;
+    margin-top:30px;
+    font-size:24px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.telegram-btn:hover{
+    transform:scale(1.03);
+}
+
+.note{
+    text-align:center;
+    font-size:14px;
+    color:#a0a0a0;
+    margin-top:25px;
+    line-height:1.7;
+}
+
 </style>
 </head>
 
@@ -80,32 +159,46 @@ margin-top:50px;
 
 <div class="container">
 
-<div class="box">
+    <div class="logo">🔥</div>
 
-<h1>🔥 SPORTS PANDIT 🔥</h1>
+    <div class="title">SPORTS PANDIT</div>
 
-<p>
-India’s Fast Growing Sports Analysis Community
-</p>
+    <div class="subtitle">
+        Free number Analysis <br>
+        Telegram Community
+    </div>
 
-<p>
-✅ Live Match Updates<br>
-✅ Sports Analysis<br>
-✅ Telegram Community<br>
-✅ 18+ Only
-</p>
+    <div class="badge">
+        18+ Only | Play Responsibly
+    </div>
 
-<a class="btn telegram"
-href="https://t.me/+oQJz2hnqZHs3Yjdl"
-onclick="fbq('track','Lead');">
-JOIN TELEGRAM
-</a>
+    <div class="description">
+        Join our sports community for live  updates, number analysis and daily discussions.
+    </div>
 
-<p style="font-size:13px;color:gray;">
-Disclaimer: This page is for entertainment and sports community purposes only.
-</p>
+    <div class="members">
+        ✅ 4000+ Active Members
+    </div>
 
-</div>
+    <div class="preview">
+        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=1200&auto=format&fit=crop" alt="Sports">
+    </div>
+
+    <div class="features">
+        <p>✅ Live NUMBER Updates</p>
+        <p>✅  Analysis</p>
+        <p>✅ Fast & Smooth Experience</p>
+        <p>✅ Telegram Community Support</p>
+    </div>
+
+    <a class="telegram-btn" href="https://t.me/+oQJz2hnqZHs3Yjdl">
+        VIEW TODAY'S ANALYSIS
+    </a>
+
+    <div class="note">
+        Disclaimer: This page is for entertainment  community purposes only.
+        We do not promote illegal activities. Users must be 18+ and follow local laws.
+    </div>
 
 </div>
 
