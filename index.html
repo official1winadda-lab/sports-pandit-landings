@@ -7,10 +7,10 @@
 
 <title>JAI CLUB</title>
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=fbq=function(){n.callMethod?
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;
 n.push=n;
@@ -21,18 +21,13 @@ t=b.createElement(e);
 t.async=!0;
 t.src=v;
 s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script',
+s.parentNode.insertBefore(t,s)}
+(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '2150111219144057');
 fbq('track', 'PageView');
 </script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2150111219144057&ev=PageView&noscript=1"/>
-</noscript>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -46,73 +41,100 @@ src="https://www.facebook.com/tr?id=2150111219144057&ev=PageView&noscript=1"/>
 }
 
 body{
-    background:#070014;
+    background:#060112;
+    overflow-x:hidden;
+    color:white;
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     padding:20px;
-    overflow-x:hidden;
-    color:white;
 }
 
-/* Background Glow */
+/* Animated Background */
 
-body::before{
-    content:'';
+.bg1,
+.bg2{
     position:fixed;
-    width:400px;
-    height:400px;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    filter:blur(140px);
+    z-index:0;
+}
+
+.bg1{
     background:#7a00ff;
-    filter:blur(180px);
-    top:-100px;
-    left:-100px;
-    opacity:0.4;
+    top:-120px;
+    left:-120px;
+    animation:move1 8s infinite alternate;
 }
 
-body::after{
-    content:'';
-    position:fixed;
-    width:400px;
-    height:400px;
+.bg2{
     background:#00d9ff;
-    filter:blur(180px);
-    bottom:-100px;
-    right:-100px;
-    opacity:0.3;
+    bottom:-120px;
+    right:-120px;
+    animation:move2 8s infinite alternate;
 }
 
-/* Main Box */
+@keyframes move1{
+    from{transform:translate(0,0);}
+    to{transform:translate(40px,40px);}
+}
+
+@keyframes move2{
+    from{transform:translate(0,0);}
+    to{transform:translate(-40px,-40px);}
+}
+
+/* Main Card */
 
 .container{
     position:relative;
     z-index:2;
     width:100%;
     max-width:430px;
-    background:rgba(12,12,22,0.94);
+    background:rgba(15,15,25,0.92);
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:28px;
-    padding:25px;
+    backdrop-filter:blur(14px);
+    border-radius:35px;
+    padding:26px;
     box-shadow:
-    0 0 40px rgba(122,0,255,0.25),
-    0 0 20px rgba(0,217,255,0.18);
+    0 0 35px rgba(0,0,0,0.5),
+    0 0 45px rgba(122,0,255,0.25);
+}
+
+/* Top Badge */
+
+.top-badge{
+    width:fit-content;
+    margin:auto;
+    background:linear-gradient(90deg,#00d9ff,#9c5cff);
+    color:black;
+    padding:10px 22px;
+    border-radius:40px;
+    font-size:14px;
+    font-weight:700;
 }
 
 /* Logo */
 
 .logo{
     text-align:center;
-    font-size:46px;
-    margin-bottom:10px;
+    margin-top:18px;
+    font-size:55px;
 }
 
 /* Title */
 
 .title{
     text-align:center;
-    font-size:40px;
+    margin-top:10px;
+    font-size:42px;
     font-weight:800;
-    background:linear-gradient(90deg,#42e9ff,#9c5cff);
+    line-height:1.2;
+
+    background:linear-gradient(90deg,#39e1ff,#9b5cff);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -121,82 +143,128 @@ body::after{
 
 .subtitle{
     text-align:center;
-    margin-top:15px;
-    font-size:19px;
-    color:#d0d0dc;
-    line-height:1.6;
+    margin-top:16px;
+    color:#d7d7e2;
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* Stats */
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    margin-top:28px;
+    gap:12px;
+}
+
+.stat-box{
+    flex:1;
+    background:#121221;
+    border-radius:20px;
+    padding:16px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.stat-box h2{
+    color:#39e1ff;
+    font-size:22px;
+}
+
+.stat-box p{
+    margin-top:5px;
+    color:#aaaac0;
+    font-size:13px;
+}
+
+/* Button */
+
+.telegram-btn{
+    display:block;
+    width:100%;
+    margin-top:28px;
+    text-align:center;
+    text-decoration:none;
+    padding:22px;
+    border-radius:22px;
+
+    background:linear-gradient(90deg,#00d9ff,#9b5cff);
+
+    color:black;
+    font-size:22px;
+    font-weight:800;
+
+    box-shadow:
+    0 0 25px rgba(0,217,255,0.35),
+    0 0 35px rgba(155,92,255,0.25);
+
+    transition:0.3s;
+}
+
+.telegram-btn:hover{
+    transform:scale(1.03);
 }
 
 /* Image */
 
 .preview{
-    margin-top:25px;
+    margin-top:28px;
 }
 
 .preview img{
     width:100%;
-    border-radius:22px;
-    box-shadow:0 0 30px rgba(140,0,255,0.35);
+    border-radius:25px;
+    border:2px solid rgba(255,255,255,0.06);
+    box-shadow:0 0 35px rgba(122,0,255,0.3);
 }
 
 /* Features */
 
 .features{
     margin-top:28px;
-    background:#141424;
-    border-radius:20px;
-    padding:22px;
 }
 
-.features p{
-    margin:14px 0;
-    font-size:18px;
+.feature{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:16px;
+    background:#121221;
+    padding:18px;
+    border-radius:18px;
 }
 
-/* Badge */
+.icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
 
-.badge{
-    width:fit-content;
-    margin:25px auto;
     background:linear-gradient(90deg,#00d9ff,#9b5cff);
     color:black;
-    padding:12px 26px;
-    border-radius:40px;
-    font-weight:700;
-    font-size:17px;
 }
 
-/* Telegram Buttons */
-
-.telegram-btn{
-    display:block;
-    width:100%;
-    text-align:center;
-    text-decoration:none;
-    margin-top:25px;
-    padding:22px;
-    border-radius:20px;
-    background:linear-gradient(90deg,#33dfff,#9a5cff);
-    color:black;
-    font-size:22px;
-    font-weight:800;
-    transition:0.3s;
-    box-shadow:
-    0 0 25px rgba(0,217,255,0.35),
-    0 0 35px rgba(154,92,255,0.28);
+.feature-text h3{
+    font-size:16px;
 }
 
-.telegram-btn:hover{
-    transform:translateY(-4px) scale(1.02);
-}
-
-/* Note */
-
-.note{
-    margin-top:28px;
-    text-align:center;
-    color:#9b9bab;
+.feature-text p{
     font-size:13px;
+    color:#a7a7b8;
+    margin-top:4px;
+}
+
+/* Footer */
+
+.footer{
+    text-align:center;
+    margin-top:26px;
+    color:#9191a5;
+    font-size:12px;
     line-height:1.8;
 }
 
@@ -204,21 +272,12 @@ body::after{
 
 @media(max-width:480px){
 
-    .container{
-        padding:22px;
-    }
-
     .title{
         font-size:34px;
     }
 
-    .subtitle{
-        font-size:17px;
-    }
-
     .telegram-btn{
         font-size:19px;
-        padding:20px;
     }
 
 }
@@ -229,55 +288,103 @@ body::after{
 
 <body>
 
+<div class="bg1"></div>
+<div class="bg2"></div>
+
 <div class="container">
 
-    <!-- LOGO -->
+    <div class="top-badge">
+        18+ ONLY • PLAY RESPONSIBLY
+    </div>
+
     <div class="logo">🔥</div>
 
-    <!-- TITLE -->
     <div class="title">
         JAI CLUB
     </div>
 
-    <!-- SUBTITLE -->
     <div class="subtitle">
-        India's Colour Prediction Platform <br>
-        Join Official Telegram Community
+        India's Fast Growing Telegram Gaming Community
     </div>
 
     <!-- TOP BUTTON -->
+
     <a class="telegram-btn"
     href="https://t.me/+oQJz2hnqZHs3Yjdl">
         🚀 JOIN TELEGRAM CHANNEL
     </a>
 
-    <!-- IMAGE -->
-    <div class="preview">
-        <img src="https://i.imgur.com/Xxw4QxR.jpeg" alt="JAI CLUB">
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <h2>12K+</h2>
+            <p>Active Members</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>24×7</h2>
+            <p>Live Updates</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>100%</h2>
+            <p>Fast Community</p>
+        </div>
+
     </div>
 
-    <!-- BADGE -->
-    <div class="badge">
-        18+ Only | Play Responsibly
+    <!-- IMAGE -->
+
+    <div class="preview">
+        <img src="https://i.imgur.com/Xxw4QxR.jpeg">
     </div>
 
     <!-- FEATURES -->
+
     <div class="features">
-        <p>🎯 Win Go Analysis</p>
-        <p>🎲 K3 & TRX Updates</p>
-        <p>🚀 Fast Telegram Community</p>
-        <p>💎 Daily Gaming Discussions</p>
+
+        <div class="feature">
+            <div class="icon">🎯</div>
+
+            <div class="feature-text">
+                <h3>Win Go Discussions</h3>
+                <p>Daily gaming community updates</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="icon">⚡</div>
+
+            <div class="feature-text">
+                <h3>Fast Telegram Access</h3>
+                <p>Instant updates and support</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="icon">💎</div>
+
+            <div class="feature-text">
+                <h3>Premium Community</h3>
+                <p>Active users and gaming chats</p>
+            </div>
+        </div>
+
     </div>
 
     <!-- BOTTOM BUTTON -->
+
     <a class="telegram-btn"
     href="https://t.me/+oQJz2hnqZHs3Yjdl">
-        🚀 JOIN TELEGRAM CHANNEL
+        🚀 JOIN NOW
     </a>
 
-    <!-- DISCLAIMER -->
-    <div class="note">
-        Disclaimer: This page is for entertainment and community purposes only.
+    <!-- FOOTER -->
+
+    <div class="footer">
+        Disclaimer: This website is for entertainment and community purposes only.
         Users must be 18+ and follow local laws.
     </div>
 
